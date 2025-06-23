@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with React</title>
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- This first link is the core react library which works with components, state and other react stuff -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- This second link is to render react components in the browser i.e. the DOM -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        function App() {
+
+            const [time, setTime] = React.useState(new Date().toLocaleTimeString());
+
+            React.useEffect(function () {
+                setInterval(() => {
+                    setTime(new Date().toLocaleTimeString());
+                }, 1000);
+
+            }, []);
+
+            return React.createElement("header", null, "The time is: ", time);
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(React.createElement(App, null, null));
+    </script>
+</body>
+
+</html>
