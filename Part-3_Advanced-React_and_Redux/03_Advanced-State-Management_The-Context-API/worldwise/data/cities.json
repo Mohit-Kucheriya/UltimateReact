@@ -1,0 +1,40 @@
+{
+  "cities": [
+    {
+      "cityName": "Lisbon",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2027-10-31T15:59:59.138Z",
+      "notes": "My favorite city so far!",
+      "position": {
+        "lat": 38.727881642324164,
+        "lng": -9.140900099907554
+      },
+      "id": "73930385"
+    },
+    {
+      "id": "5d2f",
+      "cityName": "Dwarka",
+      "country": "India",
+      "date": "2025-08-02T13:54:34.975Z",
+      "notes": "Jai Shree Krisna",
+      "emoji": "🇮🇳",
+      "position": {
+        "lat": 22.24330473413257,
+        "lng": 68.99688720703126
+      }
+    },
+    {
+      "id": "d92b",
+      "cityName": "Bhusawal",
+      "country": "India",
+      "date": "2025-08-02T15:29:13.392Z",
+      "notes": "Bhusawal Jucntion",
+      "emoji": "🇮🇳",
+      "position": {
+        "lat": 20.98302823723408,
+        "lng": 75.79467773437501
+      }
+    }
+  ]
+}
