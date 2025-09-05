@@ -63,3 +63,27 @@ Features Categories
 1. After creating the global styles, we need to apply them. In the app component, include the GlobalStyles component in the component tree.
 
 2. This component does not accept any children and should be a sibling to the styled app component
+
+**React Hook Form**
+
+1. React Hook Form is a library that helps you manage form state in React.
+
+2. It provides a simple API for managing form state, validation, and error handling.
+
+3. Using "register" function, we can register the form fields and their validations i.e.
+
+```javascript
+    {...register("name", {
+    required: "Name is required",
+    minLength: {
+    value: 3,
+    message: "Name must be at least 3 characters"
+        }
+    })}
+```
+
+Explanation: The "register" function is used to register the form fields and their validations. The first argument is the name of the field, and the second argument is an object that contains the validation rules for the field. In this case, we are setting a required validation rule for the "name" field and a minimum length validation rule for the "name" field. The validation rules can be any valid React Hook Form validation rule, such as "required", "minLength", "maxLength", "pattern", etc.
+
+4. getValues() (without args) returns the entire form values object.
+
+5. getValues("fieldName") returns the value of that specific field.
