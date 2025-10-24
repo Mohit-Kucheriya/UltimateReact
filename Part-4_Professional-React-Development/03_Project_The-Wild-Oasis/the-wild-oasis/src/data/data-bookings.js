@@ -1,4 +1,4 @@
-import { add } from 'date-fns';
+import { add } from "date-fns";
 
 function fromToday(numDays, withTime = false) {
   const date = add(new Date(), { days: numDays });
@@ -16,8 +16,8 @@ export const bookings = [
     guestId: 2,
     hasBreakfast: true,
     observations:
-      'I have a gluten allergy and would like to request a gluten-free breakfast.',
-    isPaid: false,
+      "I have a gluten allergy and would like to request a gluten-free breakfast.",
+    hasPaid: false,
     numGuests: 1,
   },
   {
@@ -27,8 +27,8 @@ export const bookings = [
     cabinId: 1,
     guestId: 3,
     hasBreakfast: true,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 2,
   },
   {
@@ -38,8 +38,8 @@ export const bookings = [
     cabinId: 1,
     guestId: 4,
     hasBreakfast: false,
-    observations: '',
-    isPaid: false,
+    observations: "",
+    hasPaid: false,
     numGuests: 2,
   },
 
@@ -51,8 +51,8 @@ export const bookings = [
     cabinId: 2,
     guestId: 5,
     hasBreakfast: false,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 2,
   },
   {
@@ -62,8 +62,8 @@ export const bookings = [
     cabinId: 2,
     guestId: 6,
     hasBreakfast: true,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 2,
   },
   {
@@ -73,8 +73,8 @@ export const bookings = [
     cabinId: 2,
     guestId: 7,
     hasBreakfast: true,
-    observations: '',
-    isPaid: false,
+    observations: "",
+    hasPaid: false,
     numGuests: 2,
   },
 
@@ -86,8 +86,8 @@ export const bookings = [
     cabinId: 3,
     guestId: 8,
     hasBreakfast: true,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 4,
   },
   {
@@ -97,8 +97,8 @@ export const bookings = [
     cabinId: 3,
     guestId: 9,
     hasBreakfast: false,
-    observations: 'We will be bringing our small dog with us',
-    isPaid: true,
+    observations: "We will be bringing our small dog with us",
+    hasPaid: true,
     numGuests: 3,
   },
   {
@@ -108,8 +108,8 @@ export const bookings = [
     cabinId: 3,
     guestId: 10,
     hasBreakfast: true,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 4,
   },
 
@@ -121,8 +121,8 @@ export const bookings = [
     cabinId: 4,
     guestId: 11,
     hasBreakfast: true,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 4,
   },
   {
@@ -132,8 +132,8 @@ export const bookings = [
     cabinId: 4,
     guestId: 12,
     hasBreakfast: true,
-    observations: '',
-    isPaid: false,
+    observations: "",
+    hasPaid: false,
     numGuests: 4,
   },
   {
@@ -143,8 +143,8 @@ export const bookings = [
     cabinId: 4,
     guestId: 13,
     hasBreakfast: false,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 1,
   },
 
@@ -156,8 +156,8 @@ export const bookings = [
     cabinId: 5,
     guestId: 14,
     hasBreakfast: true,
-    observations: '',
-    isPaid: false,
+    observations: "",
+    hasPaid: false,
     numGuests: 5,
   },
   {
@@ -167,8 +167,8 @@ export const bookings = [
     cabinId: 5,
     guestId: 15,
     hasBreakfast: true,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 4,
   },
   {
@@ -178,8 +178,8 @@ export const bookings = [
     cabinId: 5,
     guestId: 16,
     hasBreakfast: false,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 6,
   },
 
@@ -193,7 +193,7 @@ export const bookings = [
     hasBreakfast: false,
     observations:
       "We will be checking in late, around midnight. Hope that's okay :)",
-    isPaid: true,
+    hasPaid: true,
     numGuests: 6,
   },
   {
@@ -203,8 +203,8 @@ export const bookings = [
     cabinId: 6,
     guestId: 18,
     hasBreakfast: true,
-    observations: 'I will need a rollaway bed for one of the guests',
-    isPaid: true,
+    observations: "I will need a rollaway bed for one of the guests",
+    hasPaid: true,
     numGuests: 4,
   },
   {
@@ -214,8 +214,8 @@ export const bookings = [
     cabinId: 6,
     guestId: 19,
     hasBreakfast: true,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 6,
   },
 
@@ -227,8 +227,8 @@ export const bookings = [
     cabinId: 7,
     guestId: 20,
     hasBreakfast: false,
-    observations: '',
-    isPaid: false,
+    observations: "",
+    hasPaid: false,
     numGuests: 8,
   },
   {
@@ -238,8 +238,8 @@ export const bookings = [
     cabinId: 7,
     guestId: 21,
     hasBreakfast: true,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 7,
   },
   {
@@ -249,8 +249,8 @@ export const bookings = [
     cabinId: 7,
     guestId: 22,
     hasBreakfast: true,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 6,
   },
 
@@ -263,8 +263,8 @@ export const bookings = [
     guestId: 1,
     hasBreakfast: true,
     observations:
-      'My wife has a gluten allergy so I would like to request a gluten-free breakfast if possible',
-    isPaid: true,
+      "My wife has a gluten allergy so I would like to request a gluten-free breakfast if possible",
+    hasPaid: true,
     numGuests: 9,
   },
   {
@@ -275,8 +275,8 @@ export const bookings = [
     guestId: 23,
     hasBreakfast: true,
     observations:
-      'I am celebrating my anniversary, can you arrange for any special amenities or decorations?',
-    isPaid: true,
+      "I am celebrating my anniversary, can you arrange for any special amenities or decorations?",
+    hasPaid: true,
     numGuests: 10,
   },
   {
@@ -286,8 +286,8 @@ export const bookings = [
     cabinId: 8,
     guestId: 24,
     hasBreakfast: false,
-    observations: '',
-    isPaid: true,
+    observations: "",
+    hasPaid: true,
     numGuests: 7,
   },
 ];
