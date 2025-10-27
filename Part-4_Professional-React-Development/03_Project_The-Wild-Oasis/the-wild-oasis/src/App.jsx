@@ -15,6 +15,8 @@ import Settings from "./pages/Settings";
 import PageNotFound from "./pages/PageNotFound";
 
 import AppLayout from "./ui/AppLayout";
+import Booking from "./pages/Booking";
+import Checkin from "./pages/Checkin";
 
 export default function App() {
   const queryClient = new QueryClient({
@@ -35,6 +37,8 @@ export default function App() {
             <Route index element={<Navigate replace to="dashboard" />} />
             <Route path="account" element={<Account />} />
             <Route path="bookings" element={<Bookings />} />
+            <Route path="bookings/:bookingId" element={<Booking />} />
+            <Route path="checkin/:bookingId" element={<Checkin />} />
             <Route path="cabins" element={<Cabins />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="users" element={<Users />} />
