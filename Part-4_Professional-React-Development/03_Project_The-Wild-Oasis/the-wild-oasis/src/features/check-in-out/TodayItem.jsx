@@ -48,7 +48,7 @@ export default function TodayItem({ activity }) {
         </Button>
       )}
 
-      {status === "check-in" && <CheckoutButton bookingId={id} />}
+      {status === "checked-in" && <CheckoutButton bookingId={id} />}
     </StyledTodayItem>
   );
 }
