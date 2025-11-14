@@ -37,12 +37,6 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 
-const Span = styled.span`
-  font-family: "Sono";
-  font-weight: 600;
-  color: var(--color-green-700);
-`;
-
 export default function CabinRow({ cabin }) {
   const { isDeleting, deleteCabin } = useDeleteCabin();
   const { isCreating, createCabin } = useCreateCabin();
@@ -85,7 +79,11 @@ export default function CabinRow({ cabin }) {
             <Menus.Toggle id={cabinId} />
 
             <Menus.List id={cabinId}>
-              <Menus.Button icon={<HiSquare2Stack />} onClick={handleDuplicate}>
+              <Menus.Button
+                icon={<HiSquare2Stack />}
+                onClick={handleDuplicate}
+                disabled={isCreating}
+              >
                 Duplicate
               </Menus.Button>
 

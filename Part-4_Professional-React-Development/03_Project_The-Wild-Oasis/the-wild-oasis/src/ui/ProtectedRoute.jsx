@@ -15,7 +15,7 @@ export default function ProtectedRoute({ children }) {
   const navigate = useNavigate();
 
   // 1. Load the authenticated user
-  const { user, isLoading, isAuthenticated } = useUser();
+  const { isLoading, isAuthenticated } = useUser();
 
   // 2. If there is NO authenticated user, redirect to the /login
   useEffect(
@@ -38,5 +38,5 @@ export default function ProtectedRoute({ children }) {
   // 4. If there IS user, render the app.
   if (isAuthenticated) return children;
 
-  return children;
+  return null;
 }
