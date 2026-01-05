@@ -2,6 +2,13 @@ import { Suspense } from "react";
 import CabinList from "@/app/_components/CabinList";
 import Spinner from "@/app/_components/Spinner";
 
+// All of this here is at route level
+// Next.js will revalidate this page on every request (to always show the latest data)
+// export const revalidate = 0;
+
+// If we want to revalidate this page at a specific interval (e.g., every 10 seconds), we can use the following line instead which is called Incremental Static Regeneration (ISR):
+export const revalidate = 3600; // Revalidate every hour
+
 export const metadata = {
   title: "Cabins",
 };
