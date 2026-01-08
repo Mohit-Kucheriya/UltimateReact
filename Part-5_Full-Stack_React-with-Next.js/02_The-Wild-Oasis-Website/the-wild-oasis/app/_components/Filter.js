@@ -16,7 +16,7 @@ export default function Filter() {
   }
 
   return (
-    <div className="flex border border-primary-800 gap-2">
+    <div className="flex border border-primary-800">
       <Button
         filter={"all"}
         handleFilter={handleFilter}
