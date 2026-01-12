@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
+import { createGuest, getGuest } from "./data-service";
 
 const authConfig = {
   providers: [
@@ -11,6 +12,29 @@ const authConfig = {
   callbacks: {
     authorized({ auth, request }) {
       return !!auth?.user;
+    },
+    // this callback here actually runs before the actual singup process happens. It happens after the user has put in their credentials but before they're actually really locked into the application.
+    async signIn({ user, account, profile }) {
+      try {
+        const existingGuest = await getGuest(user.email);
+
+        if (!existingGuest)
+          await createGuest({
+            email: user.email,
+            fullName: user.name,
+          });
+
+        return true;
+      } catch {
+        return false;
+      }
+    },
+
+    // this callback runs after the signin callback and also each time that the session is checked out.
+    async session({ session, user }) {
+      const guest = await getGuest(session.user.email);
+      session.user.guestId = guest.id;
+      return session;
     },
   },
   pages: {
