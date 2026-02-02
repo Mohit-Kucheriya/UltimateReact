@@ -39,13 +39,42 @@ export async function updateGuest(formData) {
   revalidatePath("/account/profile");
 }
 
+// Create new booking
+export async function createBooking(bookingData, formData) {
+  const session = await auth();
+  if (!session) throw new Error("Unauthenticated! Please sign in first");
+
+  const newBooking = {
+    ...bookingData,
+    guestId: session.user.guestId,
+    numGuests: Number(formData.get("numGuests")),
+    observations: formData.get("observations").slice(0, 1000),
+    extrasPrice: 0,
+    totalPrice: bookingData.cabinPrice,
+    status: "unconfirmed",
+    hasBreakfast: false,
+    hasPaid: false,
+  };
+
+  const { error } = await supabase.from("bookings").insert([newBooking]);
+
+  if (error) {
+    console.error(error);
+    throw new Error("Booking could not be created");
+  }
+
+  revalidatePath(`/cabins/${bookingData.cabinId}`);
+
+  redirect("/cabins/thankyou");
+}
+
 // Update reservation details
 export async function updateReservation(formData) {
   const bookingId = Number(formData.get("bookingId"));
 
   // 1. Authentication
   const session = await auth();
-  if (!session) throw new Error("Unauthorized! Please sign in first");
+  if (!session) throw new Error("Unauthenticated! Please sign in first");
 
   // 2. Authorization: Check if the user is allowed to update this booking i.e. it belongs to them
   const guestBookings = await getBookings(session.user.guestId);
@@ -81,7 +110,7 @@ export async function updateReservation(formData) {
 // Delete reservation
 export async function deleteReservation(bookingId) {
   const session = await auth();
-  if (!session) throw new Error("Unauthorized! Please sign in first");
+  if (!session) throw new Error("Unauthenticated! Please sign in first");
 
   // Check if the user is allowed to delete this booking i.e. it belongs to them
   const guestBookings = await getBookings(session.user.guestId);

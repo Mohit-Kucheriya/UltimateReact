@@ -63,3 +63,58 @@ NOTE: What happens to client components?
    e. As a result, React will now have the complete virtual DOM ready to be committed to the actual DOM.
 
    NOTE: Steps don't wait for one another. Completed render work is streamed to client.
+
+**Server Side Rendering**
+
+1. SSR at runtime i.e. where HTML is generated for each incoming request, which is also called dynamic SSR.
+
+2. SSR: "Just take the react component tree, render it as HTML, and send the HTML to the client i.e. the browser."
+
+3. Now, beside that HTML, the React bundle, which contains React itself plus the component tree will also need to be sent to the browser, so that the HTML can be hydrated.
+
+4. And "hydration" simply means adding back the interactivity to the HTML, with the only difference that the DOM has been generated on the server and not on the client i.e. "Also send the React code to make the HTML interactive."
+
+5. RSC is NOT as same as SSR: they are separate technologies.
+
+6. RSC does not replace SSR, but rather complements it i.e. to work together with it.
+
+**What is React Suspense**
+
+1. Built-in React component that we can use to catch/isolate components (or entire subtrees) that are not yet ready to be rendered because they are fetching data from an API or a database i.e. asynchronous work.
+
+**How does suspense work**
+
+1. While rendering, suspending component is found.
+
+2. Go to closest Suspense parent (boundary) and discard already rendered children.
+
+3. Display fallback component/JSX.
+
+4. After async work is done, Render subtree under Suspense boundary.
+
+**Partial pre-rendering**
+
+1. New rendering strategy that combines static and dynamic rendering at the same route.
+
+2. A static (pre-rendered) shell is served immediately from a CDN, leaving holes for dynamic content.
+
+3. The slower dynamic content is streamed in as it's rendered on the server.
+
+**How Next.js Caches data**
+
+1. Caching: Storing fetched or computed data in a temporary location for future access, instaed of having to re-fetch or re-compute that data every time it's needed.
+
+2. Next.js caches very aggressively: everything that is possible to cache is cached i.e. both on server and the users browser.
+
+**Advanced: Server Component in Client Component**
+
+1. The only way in which we can render a server component in a client component is by passing it as a prop.
+
+**Optimistic UI**
+
+1. Optimistic UI is a trick and a technique that we can use in order to improve the perceived performance of a use interface i.e.we assume that a certain asynchronous operation will be successfull, before it has even finished.
+
+2. useOptimistic() hook basically takes two arguments:
+   a. First, current state i.e. this is the value which is gonna return in the beginning and also while there is no asynchronous action running, so while no server action is pending.
+
+   b. Second, updating function
