@@ -39,3 +39,11 @@ React Query was chosen over `useEffect` + `fetch` to:
 ## Live Demo
 
 🔗 https://the-wild-oasis-sage-chi.vercel.app/
+
+### Demo Access
+
+To explore the application, use the following demo credentials:
+
+- **Email:** demo@wildoasis.com  
+- **Password:** Demo1234
+
